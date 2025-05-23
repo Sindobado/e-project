@@ -1,0 +1,539 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #191919;
+}
+
+.login-form,
+.register-form {
+    display: none;
+    transition: 0.5s ease;
+}
+
+.login-form.active,
+.register-form.active {
+    display: block;
+    transition: 0.5s ease;
+}
+
+
+/*login section Start*/
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 35px 30px;
+    transition: 0.5s ease;
+    font-family: 'Obitron', sans-serif;
+    background: #191919;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo h2 {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-decoration: none;
+    pointer-events: pointer;
+    transition: 0.5s ease;
+    background: linear-gradient(270deg, #6a00f4, #007cf0, #00f7ff, #6a00f4);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s ease infinite;
+}
+
+.logo h2:hover {
+    color: cyan;
+    text-shadow: 0 0 20px cyan,
+        0 0 30px cyan,
+        0 0 40px cyan,
+        0 0 50px cyan,
+        0 0 60px cyan;
+}
+
+.social-media {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.5s ease;
+    font-weight: 700;
+    background: linear-gradient(270deg, #6a00f4, #007cf0, #00f7ff, #6a00f4);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s ease infinite;
+}
+
+.social-media a:hover {
+    color: cyan;
+    text-shadow: 0 0 20px cyan,
+        0 0 30px cyan,
+        0 0 40px cyan,
+        0 0 50px cyan,
+        0 0 60px cyan;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    filter: blur(0px);
+    pointer-events: none;
+}
+
+.bg-video.bg-active {
+    opacity: 1;
+    filter: blur(8px) brightness(0.7);
+}
+
+.login-section {
+    position: relative;
+    width: 90vw;
+    max-width: 400px;
+    min-width: 260px;
+    height: 450px;
+    background: black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.login-section h2 {
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+}
+
+.input-check:checked~h2 {
+    background: black;
+    color: cyan;
+    text-shadow: 0 0 10px cyan,
+        0 0 15px cyan
+}
+
+.input-box {
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    pointer-events: none;
+    color: #fff;
+}
+
+
+.input-box input {
+    width: 100%;
+    height: 50px;
+    padding: 10px 0;
+    font-size: 1em;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+}
+
+.input-check:checked~.input-box input {
+    transition: 0.3s;
+    color: cyan;
+    text-shadow: 0 0 20px cyan
+}
+
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+    transition: 0.3s;
+    color: cyan;
+    text-shadow: 0 0 20px cyan,
+        0 0 30px cyan,
+        0 0 40px cyan,
+        0 0 50px cyan,
+        0 0 60px cyan;
+}
+
+.input-check:checked~.input-box label {
+    color: cyan;
+    text-shadow: 0 0 10px cyan
+}
+
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 50px;
+}
+
+.input-check:checked~.input-box .icon {
+    color: cyan;
+    text-shadow: 0 0 20px cyan
+}
+
+
+.remember-forgot {
+    color: #fff;
+    font-size: 0.9em;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rememberme {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.input-check:checked~.remember-forgot a,
+.input-check:checked~.remember-forgot label {
+
+    color: cyan;
+    text-shadow: 0 0 20px cyan,
+        0 0 30px cyan
+}
+
+.login-btn {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border: none;
+    border-radius: 40px;
+    font-size: 1em;
+    color: black;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s ease;
+
+}
+
+.input-check:checked~.input-box .login-btn {
+    background: cyan;
+    color: black;
+    text-shadow: 0 0 20px cyan,
+        0 0 30px cyan
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px cyan,
+        0 0 10px cyan,
+        0 0 15px cyan,
+        0 0 20px cyan,
+        0 0 25px cyan;
+
+}
+
+
+.register-link {
+    color: #fff;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+
+.input-check:checked~.register-link p a {
+    color: cyan;
+    text-shadow: 0 0 20px cyan,
+        0 0 30px cyan
+}
+
+.login-link {
+    color: #fff;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.login-link p a:hover {
+    text-decoration: underline;
+}
+
+
+.input-check:checked~.login-link p a {
+    color: cyan;
+    text-shadow: 0 0 20px cyan,
+        0 0 30px cyan
+}
+
+/* Login Section End */
+
+/* Light Effect */
+.login-light {
+    position: absolute;
+    top: -123px;
+    width: 500px;
+    height: 0px;
+    background: cyan;
+    transform: translateX(-19%);
+    border-radius: 20px;
+    opacity: 0;
+    transition:
+        transform 0.5s cubic-bezier(.68, -0.55, .27, 1.55),
+        opacity 0.3s,
+        height 0.5s ease;
+    transform-origin: center;
+
+}
+
+.login-light:before {
+    content: '';
+    position: absolute;
+    top: -900px;
+    left: 0;
+    width: 100%;
+    height: 950px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) -50%, rgba(255, 255, 255, 0) 90%);
+    clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+    pointer-events: none;
+    transition: 0.5s ease;
+}
+
+.input-check:checked~.login-light::before {
+    top: 0;
+}
+
+.input-check:checked~.login-light {
+    height: 10px;
+    opacity: 1;
+}
+
+/* Light Effect End */
+
+/* Toggle Switch */
+.toggle {
+    position: absolute;
+    right: -70px;
+    top: 20px;
+    width: 60px;
+    height: 120px;
+    background: #191919;
+    border-radius: 20px;
+}
+
+.toggle:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.toggle::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 45px;
+    height: 45px;
+    background: #333;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+
+.input-check:checked~.toggle::after {
+    top: 60px;
+}
+
+.input-check {
+    position: absolute;
+    right: -70px;
+    top: 30px;
+    z-index: 1;
+    opacity: 0;
+    width: 61px;
+    height: 120px;
+
+}
+
+.toggle .text {
+    position: absolute;
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: 700;
+    z-index: 1;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    pointer-events: none;
+    transition: 0.3s;
+    top: 18%;
+}
+
+.toggle .text.off {
+    opacity: 1;
+
+}
+
+.input-check:checked~.toggle .text.off {
+    top: 76px;
+    opacity: 0;
+}
+
+.toggle .text.on {
+    opacity: 0;
+}
+
+.input-check:checked~.toggle .text.on {
+    top: 76px;
+    opacity: 1;
+    color: cyan;
+    text-shadow:
+        0 0 15px cyan,
+        0 0 30px cyan,
+        0 0 45px cyan,
+        0 0 60px cyan;
+}
+
+/* Toggle Switch End*/
+
+/*Media Query*/
+@media (max-width: 600px) {
+    body {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+
+    .main-container {
+        padding: 10px;
+    }
+
+    .login-section {
+        width: 30vw;
+        min-width: unset;
+        max-width: 98vw;
+        padding: 10px 0;
+    }
+
+    .login-light {
+        width: 100%;
+        left: 0;
+        transform: none;
+        max-width: 100vw;
+    }
+
+    .toggle {
+        right: 0;
+        top: 10px;
+        width: 50px;
+        height: 110px;
+        margin-right: -70px;
+    }
+
+    .input-box {
+        width: 100%;
+        min-width: unset;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .login-section h2 {
+        font-size: 1.3rem;
+    }
+}
