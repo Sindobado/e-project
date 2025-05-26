@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Special+Gothic+Expanded+One&display=swap');
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +8,194 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 3000px;; 
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ /* #Home {
+
+ } */
+/*@media (max-width: 480px) {
+  #Home{
+    background-color: rgb(119, 241, 119);
+    
+  }
+  
+} */
+ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  display: flex;
+  gap: 6rem;
+}
+li {
+
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+  font-family: sans-serif;
+
+}
+a {
+  text-decoration: none; 
+  color: inherit
+}
+
+nav {
+  display:flex;
+  padding:15px 0;
+  color: white;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+.logo{
+  width:15%;
+}
+.logo-container {
+  display: flex;
+  gap: 20px;
+  font-family: Poppins, sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  /* background-color: rosybrown; */
+}
+
+body{
+  
+  background-color:rgb(83, 82, 77) ;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+.search-icon {
+  width: auto;
+  height: 25px;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cart-icon {
+  width: auto;
+  height: 25px;
+}
+.user-icon {
+  width: auto;
+  height: 25px;
+}
+.heart-icon {
+  width: auto;
+  height: 25px;
+}
+.icon-container{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+.home-image{
+  width:30%;;
+  border-radius: 70px;
+}
+
+.special-gothic-expanded-one-regular {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.home-container{
+  display:flex;
+  justify-content: center;
+  margin: 4rem auto;
+  width: 90vw;
+  background-color: rosybrown;
+  border-radius: 50px;
+
+}
+#home-text {
+  padding: 2rem;
+  text-align: center;
+  width: 60%;
+  height: auto;
+  color:white;;
+
+  
+}
+#home-text h1{
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5rem;
+}
+#home-text p {
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+button{
+  padding: 8px 30px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: sans-serif;
+  cursor:pointer;
+  transition: all .2s ease-in-out;
+  background-color:rgb(83, 58, 58);
+  color:white;
+  border-radius:50px;
+  border: none;
+  height: 5rem;
+  width: 12rem;
+
+}
+button:hover{
+  transform: scale(1.1);
+}
+#buttons-container{
+  display:flex;
+  justify-content:center;
+}
+#Navigation{
+  top: 0;
+  z-index: 999;
+}
+.about{
+  color:white;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.about img{
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-radius: inherit
+  
+}
+.about-text{
+  text-align: left;
+  font-family:'Special Gothic Expanded One', sans-serif;
+  font-weight:400;
+  font-style: normal;
+  font-size: 1.7rem;
+  padding-left: 1rem;
+  width: 20%;
+  height: auto;
+  position: absolute;
+}
+#Home-section-info{
+  display: flex;
+  justify-content: center;
+  margin: 20rem auto;
+  width: 90vw;
+}
+
+
