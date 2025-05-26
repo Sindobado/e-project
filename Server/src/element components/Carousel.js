@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import './Carousel.css' // Add styles for better visuals
 
-const images = [
-  "https://via.placeholder.com/600x300?text=Slide+1",
-  "https://via.placeholder.com/600x300?text=Slide+2",
-  "https://via.placeholder.com/600x300?text=Slide+3",
-];
 
-const Carousel = () => {
+const Carousel = ({photo1,photo2,photo3}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  
+  const images = [
+    "https://via.placeholder.com/600x300?text=Slide+1",
+    "https://via.placeholder.com/600x300?text=Slide+2",
+    "https://via.placeholder.com/600x300?text=Slide+3",
+  ];
+  
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1

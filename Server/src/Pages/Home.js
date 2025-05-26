@@ -6,7 +6,7 @@ import About from './About';
 
 import {Link} from 'react-router-dom';
 import Button from '../element components/Button';
-import Carousel from '../e';;
+import Carousel from '../element components/Carousel';;
 
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
 
             </div>
             <div id='Home-section-info'>
-                
+                <Carousel {photo1} {photo2} {photo3}/>
             </div>
         </div>
 
